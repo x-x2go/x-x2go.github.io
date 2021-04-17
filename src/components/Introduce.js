@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 
 const cursor = keyframes`
     0%{
-        border-right: 2px solid #fff
+        border-right: 2px solid #3E3E40
     } 
     100%{
         border-right: none;
@@ -16,11 +16,11 @@ const Txt = styled.div`
     position: absolute;
     transform: translateY(-50%);
     top: 50%;
-    margin-left: 30px;
+    margin-left: 100px;
     z-index: 6;
     p{
         font-size: 36px;
-        color: white; 
+        color: #3E3E40; 
         font-family: 'Noto Serif KR', serif;
         font-weight: 500;
         display: block; 

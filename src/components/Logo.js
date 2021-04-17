@@ -33,7 +33,7 @@ const LogoSvg = styled.svg`
 
     & .path{
         fill: none;
-        stroke: #A685DA;
+        stroke: #ff5252;
         stroke-dasharray: 3000;
         stroke-dashoffset: 1000;
         animation: ${dash} 3s linear forwards;
@@ -41,20 +41,35 @@ const LogoSvg = styled.svg`
 
 `
 
-const LogoText = styled.div`
-    
-    position: absolute;
-    width: 450px;
-    transform:translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    text-align: center;
-    h1{
-        font-family: 'Raleway', sans-serif;
-        font-size: 65px;
-        letter-spacing : 0.1em;
-        color: white;
+const grow = keyframes`
+    from{
+        padding-left: 0px;
+        padding-bottom: 0px;
     }
+    to{
+        padding-left: 30px;
+        padding-bottom: 30px;
+    }
+`;
+
+const SHADOW_COLOR = '#3E3E40';
+const shadow = Array.apply(null, new Array(100)).map((x, i)=> SHADOW_COLOR+" -"+i+"px "+i+"px").join(",");
+
+const LogoText = styled.div`
+    padding:  30px;
+    overflow: hidden;
+    margin: 0px auto;
+    width: 350px;
+    font-size: 70px;
+    position: absolute;
+    transform:translate(-50%, -50%);
+    bottom: 25%;
+    left: 50%;
+    color: #edeee9;
+    font-family: 'Orelega One', cursive;
+    text-shadow: ${shadow};
+    animation: ${grow} 0.5s linear;
+
 `
 
 const Logo = ({ setShowLine }) => {

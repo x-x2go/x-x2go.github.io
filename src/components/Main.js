@@ -2,14 +2,13 @@ import React, { useState } from 'react';
 import Logo from './Logo';
 import Canvas  from './Canvas';
 import styled from 'styled-components';
-import background from '../assets/background.jpg';
 
 
 const Wrap = styled.div`
 
     width: 100vw;
     height: 100vh;
-    background-image: url(${background});
+    background: #EDEEE9;
     position: relative;
 
 `
