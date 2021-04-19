@@ -5,85 +5,74 @@ import Introduce from './Introduce';
 
 const drawLine = keyframes`
     from{
-        height: 1px;
+        height: 0rem;
     }
     to{
-        height: 300px;
+        height: 17rem;
     }
 `
 
 const WarpCube = styled.div`
-    width: 800px;
-    height: 270px;
-    perspective: 1500px;
-    perspective-origin: center;
-    position: absolute;
-    transform:translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
+    width: 50rem;
+    height: 16rem;
+    ${({ theme }) => theme.common.absCenter}
     z-index: 4;
     
 `;
 const VerticalLine = styled.div`
-    width: 1px;
-    height:270px;
-    border-left: 2px solid #3E3E40; 
+    width: .6rem;
+    height: 17rem;
+    border-left: 0.125rem solid ${({ theme }) => theme.colors.black}; 
     margin: 0 auto;
     animation: ${drawLine} 2s linear;
 `;
 
 const moveLeft = keyframes`
     from{
-        right: -400px;
+        right: -25rem;
     }
     to{
-        right: 0px;
+        right: 0rem;
     }
 `
 const moveRight = keyframes`
     from{
-        left: -400px;
+        left: -25rem;
     }
     to{
-        left: 0px;
+        left: 0rem;
     }
 `;
 
 const lengthen = keyframes`
     from{
-        width: 0px
+        width: -50rem
     }
     to{
-        width: 800px;
+        width: 50rem;
     }
 `;
 
 const Erease = styled.div`
-    background: #EDEEE9;
-    height:300px;
+    background: ${({ theme }) => theme.colors.beige};
+    height: 19rem;
     animation: ${lengthen} 1.9s cubic-bezier(0.605, 0.235, 0.680, 0.790);
-    width: 800px;
-    height: 400px;
-    position: absolute;
-    transform:translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
+    width: 50rem;
+    height: 25rem;
+    ${({ theme }) => theme.common.absCenter}
 `;
 
 const Bracket = styled.div`
-    width: 800px;
-    height: 400px;
-    position: absolute;
-    transform:translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
+    width: 50rem;
+    height: 25rem;
+    ${({ theme }) => theme.common.absCenter}
     z-index: 5;
     div{
-        width:400px;
-        height: 400px;
+        width:25rem;
+        height: 25rem;
         overflow: hidden;
         display: inline-block;
-        font-size: 300px;
+        font-size: 19rem;
         font-weight: 300;
     }
     .open{
@@ -109,13 +98,13 @@ const Bracket = styled.div`
 `
 const open = "{";
 const close = "}";
-const Canvas = ({ removeLogo, setRemoveLogo }) => {
+const Canvas = ({ removeLogo, setRemoveLogo, setFinProlog }) => {
     const [showCanvas, setShowCanvas] = useState(false);
 
     return (
         <WarpCube>
             {!showCanvas && <VerticalLine onAnimationEnd={()=>setShowCanvas(true)}/>}
-            {removeLogo && <Introduce />}
+            {removeLogo && <Introduce setFinProlog={setFinProlog}/>}
             {showCanvas && <Bracket onAnimationEnd={()=>setRemoveLogo(true)}>
                     <div className="open">
                         <p >{open}</p>

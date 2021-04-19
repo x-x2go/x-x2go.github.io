@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 
 const cursor = keyframes`
     0%{
-        border-right: 2px solid #3E3E40
+        border-right: .125rem solid #3E3E40
     } 
     100%{
         border-right: none;
@@ -14,18 +14,18 @@ const Txt = styled.div`
     width: fit-content;
     height: fit-content;
     position: absolute;
-    transform: translateY(-50%);
+    transform:translate(-50%, -50%);
     top: 50%;
-    margin-left: 100px;
+    left: 50%;
     z-index: 6;
     p{
-        font-size: 36px;
+        font-size: 2.5rem;
         color: #3E3E40; 
         font-family: 'Noto Serif KR', serif;
-        font-weight: 500;
+        font-weight: 600;
         display: block; 
         width: fit-content;
-        margin: 25px;
+        margin: 1.6rem;
     } 
     & .running{
         animation: ${cursor} 0.8s infinite;
@@ -37,7 +37,7 @@ const Txt = styled.div`
 
 const texts = ["프론드엔드 개발자", "이고은 입니다."];
 
-const Introduce = () => {
+const Introduce = ({ setFinProlog }) => {
     const [comment1, setComment1] = useState("");
     const [comment2, setComment2] = useState("");
     const timer = ms => new Promise(res=>setTimeout(res, ms));
@@ -49,6 +49,7 @@ const Introduce = () => {
                 setComment2(prev => prev + t);
                 await timer(100);
                }
+               setFinProlog(true);
             }else{
                 for(const t of texts[i]){
                     setComment1(prev => prev + t);

@@ -2,8 +2,8 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
 const Logos = styled.div`
-    width: 800px;
-    height: 450px;
+    width: 50rem;
+    height: 28rem;
     position: absolute;
     transform:translate(-50%, -50%);
     top: 50%;
@@ -25,10 +25,7 @@ const LogoSvg = styled.svg`
     clip-rule:evenodd;
     stroke-linecap:round;
     stroke-linejoin:round;
-    position: absolute;
-    transform:translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
+    ${({ theme }) => theme.common.absCenter}
     z-index: 2;
 
     & .path{
@@ -43,12 +40,12 @@ const LogoSvg = styled.svg`
 
 const grow = keyframes`
     from{
-        padding-left: 0px;
-        padding-bottom: 0px;
+        padding-left: 0rem;
+        padding-bottom: 0rem;
     }
     to{
-        padding-left: 30px;
-        padding-bottom: 30px;
+        padding-left: 2rem;
+        padding-bottom: 2rem;
     }
 `;
 
@@ -56,16 +53,16 @@ const SHADOW_COLOR = '#3E3E40';
 const shadow = Array.apply(null, new Array(100)).map((x, i)=> SHADOW_COLOR+" -"+i+"px "+i+"px").join(",");
 
 const LogoText = styled.div`
-    padding:  30px;
+    padding:  2rem;
     overflow: hidden;
-    margin: 0px auto;
-    width: 350px;
-    font-size: 70px;
+    margin: 0rem auto;
+    width: 22rem;
+    font-size: ${({ theme }) => theme.fontSize.title};;
     position: absolute;
     transform:translate(-50%, -50%);
     bottom: 25%;
     left: 50%;
-    color: #edeee9;
+    color: ${({ theme }) => theme.colors.beige};
     font-family: 'Orelega One', cursive;
     text-shadow: ${shadow};
     animation: ${grow} 0.5s linear;
