@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
-import Logo from './Logo';
-import Canvas  from './Canvas';
+import Logo from '../components/Logo';
+import Canvas  from '../components/Canvas';
 import styled, { keyframes } from 'styled-components';
 
-
-const Wrap = styled.div`
-    width: 100vw;
-    height: 100vh;
-    background: ${({ theme }) => theme.colors.beige};
-    position: relative;
+const Wrap=styled.div`
+    ${({theme})=>theme.common.pageWrap};
+    opacity:${({active})=> active ? 1 : 0};
 `
 
 const mouseScroll = keyframes`
@@ -39,12 +36,12 @@ const ScrollDown = styled.div`
             }
     }
 `;
-const Main = ({ finProlog, setFinProlog }) => {
+const Main = ({ finProlog, setFinProlog, active }) => {
     const [showLine, setShowLine] = useState(false);
     const [removeLogo, setRemoveLogo] = useState(false);
 
     return (
-        <Wrap>
+        <Wrap className='page' active={active}>
             { showLine && <Canvas removeLogo={removeLogo} setRemoveLogo={setRemoveLogo} setFinProlog={setFinProlog}/>}
             { !removeLogo && <Logo setShowLine={setShowLine}/>}
             { finProlog && <ScrollDown>

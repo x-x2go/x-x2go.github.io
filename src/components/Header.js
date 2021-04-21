@@ -6,6 +6,9 @@ import BubbleFilter from '../style/BubbleFilter'
 
 const categories = [
     {
+        name: 'main'
+    },
+    {
         name: 'skill'
     },
     {
@@ -54,9 +57,9 @@ const showUp = keyframes`
 `
 
 const Nav = styled.div`
-    width: 30rem;
+    width: 38rem;
     height: 3.125rem;
-    position: absolute;
+    position: fixed;
     top: 0rem;
     right:0rem;
     z-index:10;
@@ -98,7 +101,7 @@ const Category = styled(Link)`
         font-style: italic;
         font-size: ${({ theme }) => theme.fontSize.subtitle};
         line-height: ${({ theme }) => theme.fontSize.subtitle};
-        width: 6.25rem;
+        width: 6rem;
         height: 1.5rem;
         margin-right: 2rem;
         padding: 1rem .6rem 1rem;
@@ -138,12 +141,12 @@ const Category = styled(Link)`
 
 `;
 
-const Header = ({ finProlog }) => {
+const Header = ({ finProlog, setActivePage }) => {
 
     return (
         <Nav>
             { finProlog && categories.map(x => (
-                <Category aciveClass='active' to={x.name} spy={true} smooth={true}>
+                <Category aciveClass='active' to={x.name} spy={true} smooth={true} onSetActive={(page)=>setActivePage(page)}>
                     <div className='wrap'>
                         <p>{x.name}</p>
                         <Bubble>

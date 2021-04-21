@@ -1,9 +1,8 @@
-import styled from 'styled-components';
 
 const pixelToRem = size => `${size / 16}rem`;
 
 const colors = {
-    red: "#ff5252",
+    red: "#CC2C38",
     black: "#3E3E40",
     beige: "#EDEEE9",
 };
@@ -11,6 +10,7 @@ const colors = {
 const fontSize = {
     base: pixelToRem(16),
     subtitle: pixelToRem(24),
+    halftitle: pixelToRem(40),
     title: pixelToRem(70),
 }
 
@@ -26,6 +26,21 @@ const common = {
         transform:translate(-50%, -50%);
         top: 50%;
         left: 50%;
+    `,
+
+    pageWrap:`
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+        transition-property: all;
+        transition-duration: 1s;
+        transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    `,
+
+    block:`
+        display: grid;
+        grid-template-columns: 1fr 2fr 10rem;
+        align-items: center;
     `
 }
 

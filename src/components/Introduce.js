@@ -19,7 +19,7 @@ const Txt = styled.div`
     left: 50%;
     z-index: 6;
     p{
-        font-size: 2.5rem;
+        font-size: ${({theme})=>theme.fontSize.halftitle};
         color: #3E3E40; 
         font-family: 'Noto Serif KR', serif;
         font-weight: 600;
@@ -49,7 +49,9 @@ const Introduce = ({ setFinProlog }) => {
                 setComment2(prev => prev + t);
                 await timer(100);
                }
-               setFinProlog(true);
+               if(!setFinProlog){
+                   setFinProlog(true);
+               }
             }else{
                 for(const t of texts[i]){
                     setComment1(prev => prev + t);
@@ -67,7 +69,6 @@ const Introduce = ({ setFinProlog }) => {
         <Txt>
             <p className={comment2 !== ""? 'paused' : 'running'}>{comment1}</p>
             <p className={comment2 !== ""? 'running' : 'paused'}>{comment2}</p>
-
         </Txt>
     )
 

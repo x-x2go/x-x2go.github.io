@@ -1,21 +1,24 @@
 import React, { useState } from 'react';
-import Scroll, {Element} from 'react-scroll'
-import Contect from '../components/Contect';
+import {Element} from 'react-scroll'
+import Contect from './Contect';
 import Header from '../components/Header';
-import Main from '../components/Main';
-import Project from '../components/Project';
-import Skill from '../components/Skill';
+import Main from './Main';
+import Project from './Project';
+import Skill from './Skill';
+
 
 const Portfolio = () => {
     const [finProlog, setFinProlog] = useState(false);
+    const [activePage, setActivePage] = useState("main");
+  
 
     return (
         <>
-        <Header finProlog={finProlog}/>
-        <Main finProlog={finProlog} setFinProlog={setFinProlog}/>
-        {finProlog && <Element name='skill'><Skill /></Element>}
-        {finProlog && <Element name='project'><Project/></Element>}
-        {finProlog && <Element name='contect'><Contect /></Element>}
+        <Header finProlog={finProlog} setActivePage={setActivePage}/>
+        <Element name='main'><Main finProlog={finProlog} setFinProlog={setFinProlog} active={activePage === "main"}/></Element>
+        {finProlog && <Element name='skill'><Skill active={activePage === "skill"}/></Element>}
+        {finProlog && <Element name='project'><Project active={activePage === "project"}/></Element>}
+        {finProlog && <Element name='contect'><Contect active={activePage === "contect"}/></Element>}
       </>
     )
 }
