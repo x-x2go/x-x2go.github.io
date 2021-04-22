@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
     body{
         background: ${({ theme }) => theme.colors.beige};
         color:${({theme})=>theme.colors.black};
+        overflow-x: hidden;
     }
 
     h1{
@@ -25,9 +26,14 @@ const GlobalStyle = createGlobalStyle`
 
     h3{
         font-size: ${({theme})=>theme.fontSize.subtitle};
-        font-family: 'Orelega One', sans-serif;
+        font-family: 'Orelega One', 'Noto Serif KR', sans-serif;
         line-height: 1.5rem;
         display: inline-block;
+    }
+
+    p{
+        font-family: 'Noto Sans KR', sans-serif;
+        font-size: ${({theme})=>theme.fontSize.base};
     }
 
 `

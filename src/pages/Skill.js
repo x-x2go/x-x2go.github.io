@@ -75,12 +75,16 @@ const SkillBlock = styled.div`
                 width: fit-content;
                 display: inline-block;
                 margin: 0.5rem 1rem;
+                
             }
         }
 
         h3{
             padding-left: 0.5rem;
             font-family: 'Raleway';
+            font-size: ${({theme})=>theme.fontSize.subtitle};
+            line-height: 1.5rem;
+            display: inline-block;
         }
 
     }
@@ -88,7 +92,7 @@ const SkillBlock = styled.div`
 `;
 
 const Skill = ({ active }) => {
-    const skills = (skill) => skill.map(x=>(<p id={x.name}><Icon name={x.name}/><h3>{x.text}</h3></p>))
+    const skills = (skill) => skill.map(x=>(<p key={x.name} id={x.name}><Icon name={x.name}/> {x.text}</p>))
 
     return (
         <Wrap active={active}>

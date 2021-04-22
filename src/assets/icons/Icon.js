@@ -17,6 +17,7 @@ const paths = {
 const IconSvg = styled(Svg)`
   width: 24px; 
   height: 24px;
+  margin-bottom: -0.4rem;
 `
 const Icon = ({ name }) => ( 
     <IconSvg viewBox="0 0 24 24" role="img">   

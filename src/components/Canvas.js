@@ -45,19 +45,27 @@ const moveRight = keyframes`
 `;
 
 const lengthen = keyframes`
-    from{
-        width: -50rem
+    0%{
+        width: 0rem;
     }
-    to{
+    5%{
+        width: 0rem;
+    }
+    60%{
+        width: 23rem;
+    }
+    80%{
+        width: 45rem;
+    }
+    100%{
         width: 50rem;
     }
 `;
 
 const Erease = styled.div`
     background: ${({ theme }) => theme.colors.beige};
-    height: 19rem;
     animation: ${lengthen} 1.9s cubic-bezier(0.605, 0.235, 0.680, 0.790);
-    width: 50rem;
+    animation-fill-mode: both;
     height: 25rem;
     ${({ theme }) => theme.common.absCenter}
 `;
@@ -72,7 +80,6 @@ const Bracket = styled.div`
         height: 25rem;
         overflow: hidden;
         display: inline-block;
-        font-size: 19rem;
         font-weight: 300;
     }
     .open{
@@ -81,6 +88,7 @@ const Bracket = styled.div`
                 width:fit-content;
                 height:fit-content;
                 position:relative;
+                font-size: 19rem;
                 animation: ${moveLeft} 2s linear;
             }
         }
@@ -91,6 +99,7 @@ const Bracket = styled.div`
                 width:fit-content;
                 height: fit-content;
                 position:relative;
+                font-size: 19rem;
                 animation: ${moveRight} 2s linear;
             }
         }

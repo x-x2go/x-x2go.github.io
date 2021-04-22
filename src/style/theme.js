@@ -8,7 +8,7 @@ const colors = {
 };
 
 const fontSize = {
-    base: pixelToRem(16),
+    base: pixelToRem(18),
     subtitle: pixelToRem(24),
     halftitle: pixelToRem(40),
     title: pixelToRem(70),

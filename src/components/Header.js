@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-scroll';
 import styled, { keyframes } from 'styled-components';
 import BubbleFilter from '../style/BubbleFilter'
+import Cursor from './Cursor';
 
 
 const categories = [
@@ -18,24 +19,6 @@ const categories = [
         name: 'contect'
     }
 ];
-
-const flow = keyframes`
-    0% {
-        left: 0px;
-        width: 2rem;
-        height: 2rem;
-    }
-  
-    80%{
-        width: 2rem;
-        height: 2rem;
-    }
-    100%{
-        left: 3.12rem;
-        width: 2.5rem;
-        height: 2.5rem;
-    }
-`
 
 const showLine = keyframes`
     from{
@@ -55,6 +38,24 @@ const showUp = keyframes`
     }
 
 `
+const animationLoop = i => (
+    `&:nth-child(${i + 1}){
+    div{
+        animation-delay: ${0.3 * i}s;
+            p{
+                animation-delay:${0.3 * (i + 1)}s;
+            }
+        }
+}`);
+
+const getAnimation = () => {
+    let str = '';
+    for(let i = 0; i < 4; i++){
+        str += animationLoop(i);
+    }
+    return str;
+};
+
 
 const Nav = styled.div`
     width: 38rem;
@@ -64,33 +65,17 @@ const Nav = styled.div`
     right:0rem;
     z-index:10;
     a{
-        &:nth-child(2){
-            div{
-            animation-delay: .3s;
-                p{
-                    animation-delay: .6s;
-                }
-            }
-        }
-        &:nth-child(3){
-            div{
-            animation-delay: .6s;
-                p{
-                    animation-delay: .9s;
-                }
-            }
-        }  
+        ${getAnimation()}
     }
     
 `;
 
-const Bubble = styled.div`
-    -webkit-filter: url('#liquid');
-     filter: url('#liquid');
-     position: relative;
-     top:-2.2rem;
-     left: -1.65rem;
-    
+const blob = keyframes`
+    0%, 100% { border-radius: 43% 77% 80% 40% / 40% 40% 80% 80%; }
+	20% { border-radius: 47% 73% 61% 59% / 47% 75% 45% 73%; }
+	40% { border-radius: 46% 74% 74% 46% / 74% 58% 62% 46%; }
+	60% { border-radius: 47% 73% 61% 59% / 40% 40% 80% 80%; }
+	80% { border-radius: 50% 70% 52% 68% / 51% 61% 59% 69%; }
 `
 
 const Category = styled(Link)`
@@ -112,7 +97,7 @@ const Category = styled(Link)`
         animation: ${showLine} .3s linear;
         animation-fill-mode: both;
         
-        p{
+        h3{
             position: relative;
             z-index: 5;
             animation: ${showUp} .5s linear .3s;
@@ -120,25 +105,52 @@ const Category = styled(Link)`
         }
 
         &:hover{
-            .from{
-                width: 1rem;
-                height: 2.5rem;
-                position: relative;
-                background-color: ${({ theme }) => theme.colors.red};
+            text-align: center;
+
+            h3{
+                transition: 1s;
+                font-size: 1.7rem;
+                
             }
-            .bubble{
-                width: 2.5rem;
-                height: 2.5rem;
-                border-radius: 100%;
+             .cursor {
+                width: 40px;
+                height: 40px;
                 background-color: ${({ theme }) => theme.colors.red };
-                position: relative;
-                top: -2.2rem;
-                left: 3.12rem;
-                animation: ${flow} 1s cubic-bezier(.5,.19,.66,.12);
+                position: fixed;
+                transform: translate(-50%, -50%);
+                mix-blend-mode: screen;
+                pointer-events: none;
+                animation: ${blob} 5s ease infinite;
             }
         }
-    }
 
+        
+    }
+    &.active{
+        .wrap{
+            text-align: center;
+                h3{
+                    transition: 1s;
+                    font-size: 1.7rem;
+
+                }
+                
+                .cursor{
+                    mix-blend-mode: screen;
+                    background-blend-mode: difference;
+                    background-color: brown;
+                }
+
+            &::after{
+                    content:'';
+                    width: 5rem;
+                    border-bottom: 0.125rem solid ${({ theme }) => theme.colors.red };;
+                    ${({ theme }) => theme.common.absCenter };
+                }    
+        }
+                
+    }
+   
 `;
 
 const Header = ({ finProlog, setActivePage }) => {
@@ -146,13 +158,10 @@ const Header = ({ finProlog, setActivePage }) => {
     return (
         <Nav>
             { finProlog && categories.map(x => (
-                <Category aciveClass='active' to={x.name} spy={true} smooth={true} onSetActive={(page)=>setActivePage(page)}>
+                <Category aciveclass='active' key={x.name} to={x.name} spy={true} smooth={true} onSetActive={(page)=>setActivePage(page)}>
                     <div className='wrap'>
-                        <p>{x.name}</p>
-                        <Bubble>
-                            <div className='from'/>
-                            <div className='bubble'/>
-                        </Bubble>
+                        <h3>{x.name}</h3>
+                        <Cursor/>
                     </div>
                 </Category>
             ))}

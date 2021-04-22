@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Logo from '../components/Logo';
 import Canvas  from '../components/Canvas';
 import styled, { keyframes } from 'styled-components';
+import {scroller} from 'react-scroll';
 
 const Wrap=styled.div`
     ${({theme})=>theme.common.pageWrap};
@@ -40,11 +41,18 @@ const Main = ({ finProlog, setFinProlog, active }) => {
     const [showLine, setShowLine] = useState(false);
     const [removeLogo, setRemoveLogo] = useState(false);
 
+    const scrollNext = ()=>{
+        scroller.scrollTo('skill', {
+            duration: 1500,
+            smooth: true
+          })
+    };
+
     return (
         <Wrap className='page' active={active}>
             { showLine && <Canvas removeLogo={removeLogo} setRemoveLogo={setRemoveLogo} setFinProlog={setFinProlog}/>}
             { !removeLogo && <Logo setShowLine={setShowLine}/>}
-            { finProlog && <ScrollDown>
+            { finProlog && <ScrollDown onClick={scrollNext}>
                 <div className='arrows'/>
                 <div className='arrows'/>
             </ScrollDown>}

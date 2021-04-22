@@ -78,8 +78,8 @@ const Contect = ({ active }) => {
                     <div className="halftitle">
                         <h1>Contect</h1>
                         <div className="contectby">
-                            <div><h3>github</h3><i className="fas fa-external-link-alt"></i></div>
-                            <div><h3>blog</h3><i className="fas fa-external-link-alt"></i></div>
+                            <div><a href='https://github.com/x-x2go' target="_blank" rel="noopener noreferrer"><h3>github</h3><i className="fas fa-external-link-alt"></i></a></div>
+                            <div><a href='https://after-newmoon.tistory.com/' target="_blank" rel="noopener noreferrer"><h3>blog</h3><i className="fas fa-external-link-alt"></i></a></div>
                         </div>
                     </div>
                     

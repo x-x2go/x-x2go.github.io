@@ -1,4 +1,4 @@
-import React ,{ useState, useEffect } from 'react';
+import React ,{ useState, useEffect} from 'react';
 import styled, { keyframes } from 'styled-components';
 
 const cursor = keyframes`
@@ -49,9 +49,7 @@ const Introduce = ({ setFinProlog }) => {
                 setComment2(prev => prev + t);
                 await timer(100);
                }
-               if(!setFinProlog){
-                   setFinProlog(true);
-               }
+               setFinProlog(true);
             }else{
                 for(const t of texts[i]){
                     setComment1(prev => prev + t);
