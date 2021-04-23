@@ -1,6 +1,5 @@
 import React from 'react';
-import { Link, scroller, } from 'react-scroll';
-import styled, { keyframes } from 'styled-components';
+import styled, { keyframes, css } from 'styled-components';
 import Cursor from './Cursor';
 
 
@@ -26,12 +25,10 @@ const showUp = keyframes`
 `
 const animationLoop = i => (
     `&:nth-child(${i + 1}){
-    div{
         animation-delay: ${0.3 * i}s;
-            p{
-                animation-delay:${0.3 * (i + 1)}s;
-            }
-        }
+        p{
+            animation-delay:${0.3 * (i + 1)}s;
+        }    
 }`);
 
 const getAnimation = () => {
@@ -50,7 +47,7 @@ const Nav = styled.div`
     top: 0rem;
     right:0rem;
     z-index:10;
-    a{
+    div{
         ${getAnimation()}
     }
     
@@ -64,9 +61,7 @@ const blob = keyframes`
 	80% { border-radius: 50% 70% 52% 68% / 51% 61% 59% 69%; }
 `
 
-const Category = styled(Link)`
-    
-    .wrap{
+const Category = styled.div`
         display: inline-block;
         font-family: 'Orelega One', sans-serif;
         font-style: italic;
@@ -90,30 +85,8 @@ const Category = styled(Link)`
             animation-fill-mode: both;
         }
 
-        &:hover{
-            text-align: center;
-
-            h3{
-                transition: 1s;
-                font-size: 1.7rem;
-                
-            }
-             .cursor {
-                width: 40px;
-                height: 40px;
-                background-color: ${({ theme }) => theme.colors.red };
-                position: fixed;
-                transform: translate(-50%, -50%);
-                mix-blend-mode: screen;
-                pointer-events: none;
-                animation: ${blob} 5s ease infinite;
-            }
-        }
-
-        
-    }
-    &.active{
-        .wrap{
+        ${({active})=>(
+            active && css`
             text-align: center;
                 h3{
                     transition: 1s;
@@ -133,22 +106,39 @@ const Category = styled(Link)`
                     border-bottom: 0.125rem solid ${({ theme }) => theme.colors.red };;
                     ${({ theme }) => theme.common.absCenter };
                 }    
-        }
+        
+            `
+        )}
+
+        &:hover{
+            text-align: center;
+
+            h3{
+                transition: 1s;
+                font-size: 1.7rem;
                 
-    }
-   
+            }
+             .cursor {
+                width: 40px;
+                height: 40px;
+                background-color: ${({ theme }) => theme.colors.red };
+                position: fixed;
+                transform: translate(-50%, -50%);
+                mix-blend-mode: screen;
+                pointer-events: none;
+                animation: ${blob} 5s ease infinite;
+            }
+        }
 `;
 
-const Header = ({ finProlog, setActivePage, handlePageChange }) => {
+const Header = ({ finProlog, activePage, handlePageChange }) => {
 
     return (
         <Nav>
             { finProlog && categories.map((name, i) => (
-                <Category aciveclass='active' key={name} to={name} onClick={()=>handlePageChange(i)} spy={true} smooth={true} >
-                    <div className='wrap'>
+                <Category  key={name} onClick={()=>handlePageChange(i)} active={activePage === name} >
                         <h3>{name}</h3>
                         <Cursor/>
-                    </div>
                 </Category>
             ))}
         </Nav>

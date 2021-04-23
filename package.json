@@ -12,7 +12,6 @@
     "react-modal": "^3.13.1",
     "react-page-scroller": "^2.1.0",
     "react-scripts": "4.0.3",
-    "react-scroll": "^1.8.2",
     "styled-components": "^5.2.3",
     "web-vitals": "^1.0.1"
   },
