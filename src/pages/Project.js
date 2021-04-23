@@ -48,6 +48,7 @@ const Popup = styled(Modal)`
             margin: 1rem;
             position: absolute;
             right: 0rem;
+            cursor: pointer;
         }
 `;
 

@@ -5,7 +5,7 @@ const GlobalStyle = createGlobalStyle`
     body{
         background: ${({ theme }) => theme.colors.beige};
         color:${({theme})=>theme.colors.black};
-        overflow-x: hidden;
+        overflow: hidden;
     }
 
     h1{

@@ -1,24 +1,10 @@
 import React from 'react';
-import { Link } from 'react-scroll';
+import { Link, scroller, } from 'react-scroll';
 import styled, { keyframes } from 'styled-components';
-import BubbleFilter from '../style/BubbleFilter'
 import Cursor from './Cursor';
 
 
-const categories = [
-    {
-        name: 'main'
-    },
-    {
-        name: 'skill'
-    },
-    {
-        name: 'project'
-    },
-    {
-        name: 'contect'
-    }
-];
+const categories = ['main','skill','project','contect'];
 
 const showLine = keyframes`
     from{
@@ -153,19 +139,18 @@ const Category = styled(Link)`
    
 `;
 
-const Header = ({ finProlog, setActivePage }) => {
+const Header = ({ finProlog, setActivePage, handlePageChange }) => {
 
     return (
         <Nav>
-            { finProlog && categories.map(x => (
-                <Category aciveclass='active' key={x.name} to={x.name} spy={true} smooth={true} onSetActive={(page)=>setActivePage(page)}>
+            { finProlog && categories.map((name, i) => (
+                <Category aciveclass='active' key={name} to={name} onClick={()=>handlePageChange(i)} spy={true} smooth={true} >
                     <div className='wrap'>
-                        <h3>{x.name}</h3>
+                        <h3>{name}</h3>
                         <Cursor/>
                     </div>
                 </Category>
             ))}
-            <BubbleFilter/>
         </Nav>
     )
 }
