@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.6905646a.chunk.css",
-    "main.js": "/static/js/main.110e322f.chunk.js",
-    "main.js.map": "/static/js/main.110e322f.chunk.js.map",
+    "main.js": "/static/js/main.a11274db.chunk.js",
+    "main.js.map": "/static/js/main.a11274db.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.98a97317.js",
     "runtime-main.js.map": "/static/js/runtime-main.98a97317.js.map",
-    "static/js/2.09dc3562.chunk.js": "/static/js/2.09dc3562.chunk.js",
-    "static/js/2.09dc3562.chunk.js.map": "/static/js/2.09dc3562.chunk.js.map",
+    "static/js/2.72a6dfe3.chunk.js": "/static/js/2.72a6dfe3.chunk.js",
+    "static/js/2.72a6dfe3.chunk.js.map": "/static/js/2.72a6dfe3.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.6905646a.chunk.css.map": "/static/css/main.6905646a.chunk.css.map",
-    "static/js/2.09dc3562.chunk.js.LICENSE.txt": "/static/js/2.09dc3562.chunk.js.LICENSE.txt",
+    "static/js/2.72a6dfe3.chunk.js.LICENSE.txt": "/static/js/2.72a6dfe3.chunk.js.LICENSE.txt",
     "static/media/gotube_.e4f8b4b5.jpg": "/static/media/gotube_.e4f8b4b5.jpg",
     "static/media/gotube_vidio.33bd3c05.gif": "/static/media/gotube_vidio.33bd3c05.gif",
     "static/media/place_now.77475730.jpg": "/static/media/place_now.77475730.jpg",
@@ -20,8 +20,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.98a97317.js",
-    "static/js/2.09dc3562.chunk.js",
+    "static/js/2.72a6dfe3.chunk.js",
     "static/css/main.6905646a.chunk.css",
-    "static/js/main.110e322f.chunk.js"
+    "static/js/main.a11274db.chunk.js"
   ]
 }
