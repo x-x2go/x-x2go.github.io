@@ -17,7 +17,7 @@ const project_name ={
                 '원하는 장소의 세부 정보를 side bar에 나타냄',
                 '상황에 따라 marker icon을 다양하게 변경',
                 'React Router를 통해 라우팅을 구현'],
-        'github': 'https://github.com/x-x2go/placeNow_2.0',
+        'github': 'https://github.com/x-x2go/place_now_2.0',
         "img": [searchGif, detailGif],
     },
 

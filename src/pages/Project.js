@@ -4,8 +4,8 @@ import Modal from 'react-modal';
 import ProjectItem from './ProjectItem';
 import placeNow from '../assets/place_now.jpg';
 import gotube from '../assets/gotube_.jpg';
-import placeNowPage from '../assets/temp_placenow.jpg';
-import gotubePage from '../assets/temp_gotube.jpg';
+import placeNowPage from '../assets/placenow_page.jpg';
+import gotubePage from '../assets/gotube_page.jpg';
 import Cursor from '../components/Cursor';
 
 const Wrap = styled.div`

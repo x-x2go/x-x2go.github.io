@@ -34,7 +34,7 @@ const common = {
         position: relative;
         transition-property: all;
         transition-duration: 1s;
-        transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+        transition-timing-function: ease-out;
     `,
 
     block:`
