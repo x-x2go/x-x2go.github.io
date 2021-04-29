@@ -20,6 +20,7 @@ const Txt = styled.div`
     z-index: 6;
     p{
         font-size: ${({theme})=>theme.fontSize.halftitle};
+        line-height: ${({theme})=>theme.fontSize.halftitle};
         color: #3E3E40; 
         font-family: 'Noto Serif KR', serif;
         font-weight: 600;

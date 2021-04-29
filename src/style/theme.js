@@ -41,6 +41,17 @@ const common = {
         display: grid;
         grid-template-columns: 1fr 2fr 10rem;
         align-items: center;
+    `,
+
+    item:`
+        width: 100%;
+        height: 100%;
+        display: grid;
+        padding: 2rem;
+        box-sizing: border-box;
+        align-items: center;
+        position: absolute;
+        top: 0;
     `
 }
 

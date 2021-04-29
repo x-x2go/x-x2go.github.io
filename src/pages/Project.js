@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
 import styled, {keyframes} from 'styled-components';
 import Modal from 'react-modal';
-import ProjectItem from './ProjectItem';
 import placeNow from '../assets/place_now.jpg';
 import gotube from '../assets/gotube_.jpg';
 import placeNowPage from '../assets/placenow_page.jpg';
 import gotubePage from '../assets/gotube_page.jpg';
 import Cursor from '../components/Cursor';
+import PlaceNow from '../components/PlaceNow';
+import Gotube from './Gotube';
 
 const Wrap = styled.div`
     ${({theme})=>theme.common.pageWrap};
@@ -38,6 +39,7 @@ const Popup = styled(Modal)`
         border-radius: 1rem;
         background-color:${({theme})=>theme.colors.beige};
         animation: ${slideUp} 1s ease-out;
+        overflow: hidden;
 
         .closeBtn{
             width: 3rem;
@@ -159,7 +161,8 @@ const Project = ({ active }) => {
         <Wrap className='page' active={active}>
             <Popup isOpen={modalIsOpen} onRequestClose={()=> setModalIsOpen(false)} preventScroll={true} style={modalStyle}>
                 <div className='closeBtn' onClick={()=> setModalIsOpen(false)}>✖</div>
-                <ProjectItem name={projectName}/>
+                {projectName === 'place_now' && <PlaceNow/>}
+                {projectName === 'gotube' && <Gotube/>}
             </Popup>
             <Block>
                 <div className="halftitle"><h1>Project</h1></div>

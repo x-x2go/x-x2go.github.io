@@ -89,6 +89,7 @@ const Bracket = styled.div`
                 height:fit-content;
                 position:relative;
                 font-size: 19rem;
+                line-height: 19rem;
                 animation: ${moveLeft} 2s linear;
             }
         }
@@ -100,6 +101,7 @@ const Bracket = styled.div`
                 height: fit-content;
                 position:relative;
                 font-size: 19rem;
+                line-height: 19rem;
                 animation: ${moveRight} 2s linear;
             }
         }

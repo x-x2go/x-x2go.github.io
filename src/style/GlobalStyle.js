@@ -34,7 +34,26 @@ const GlobalStyle = createGlobalStyle`
     p{
         font-family: 'Noto Sans KR', sans-serif;
         font-size: ${({theme})=>theme.fontSize.base};
+        line-height: 1.5rem;
     }
+
+    strong{
+        font-weight:600;
+        position: relative;
+        margin: 0 0.3rem;
+        &::after{
+            content:"";
+            width: 100%;
+            height: 100%;
+            display: inline-block;
+            background: #cdcdcd;
+            padding: 0.1rem 0.3rem;
+            border-radius: 10px;
+            ${({theme})=>theme.common.absCenter};
+            z-index: -1;
+        }
+    }
+
 
 `
 
