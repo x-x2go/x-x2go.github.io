@@ -1,27 +1,30 @@
 {
   "files": {
     "main.css": "/static/css/main.6905646a.chunk.css",
-    "main.js": "/static/js/main.a33125e3.chunk.js",
-    "main.js.map": "/static/js/main.a33125e3.chunk.js.map",
+    "main.js": "/static/js/main.f40bd1cb.chunk.js",
+    "main.js.map": "/static/js/main.f40bd1cb.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.98a97317.js",
     "runtime-main.js.map": "/static/js/runtime-main.98a97317.js.map",
-    "static/js/2.72a6dfe3.chunk.js": "/static/js/2.72a6dfe3.chunk.js",
-    "static/js/2.72a6dfe3.chunk.js.map": "/static/js/2.72a6dfe3.chunk.js.map",
+    "static/js/2.172dd066.chunk.js": "/static/js/2.172dd066.chunk.js",
+    "static/js/2.172dd066.chunk.js.map": "/static/js/2.172dd066.chunk.js.map",
     "index.html": "/index.html",
     "static/css/main.6905646a.chunk.css.map": "/static/css/main.6905646a.chunk.css.map",
-    "static/js/2.72a6dfe3.chunk.js.LICENSE.txt": "/static/js/2.72a6dfe3.chunk.js.LICENSE.txt",
+    "static/js/2.172dd066.chunk.js.LICENSE.txt": "/static/js/2.172dd066.chunk.js.LICENSE.txt",
+    "static/media/category.70c47263.png": "/static/media/category.70c47263.png",
+    "static/media/detailsearch.72b4178d.png": "/static/media/detailsearch.72b4178d.png",
     "static/media/gotube_.e4f8b4b5.jpg": "/static/media/gotube_.e4f8b4b5.jpg",
     "static/media/gotube_page.2ce25d69.jpg": "/static/media/gotube_page.2ce25d69.jpg",
     "static/media/gotube_vidio.33bd3c05.gif": "/static/media/gotube_vidio.33bd3c05.gif",
+    "static/media/markers.c9fe155d.png": "/static/media/markers.c9fe155d.png",
     "static/media/place_now.77475730.jpg": "/static/media/place_now.77475730.jpg",
-    "static/media/placenow_detail_vidio.e93ebbca.gif": "/static/media/placenow_detail_vidio.e93ebbca.gif",
+    "static/media/placenow_detail.a8396d04.gif": "/static/media/placenow_detail.a8396d04.gif",
     "static/media/placenow_page.f8909798.jpg": "/static/media/placenow_page.f8909798.jpg",
-    "static/media/placenow_search_vidio.37d24bc7.gif": "/static/media/placenow_search_vidio.37d24bc7.gif"
+    "static/media/placenow_search.16772c35.gif": "/static/media/placenow_search.16772c35.gif"
   },
   "entrypoints": [
     "static/js/runtime-main.98a97317.js",
-    "static/js/2.72a6dfe3.chunk.js",
+    "static/js/2.172dd066.chunk.js",
     "static/css/main.6905646a.chunk.css",
-    "static/js/main.a33125e3.chunk.js"
+    "static/js/main.f40bd1cb.chunk.js"
   ]
 }
